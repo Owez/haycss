@@ -1,5 +1,5 @@
 // fonts
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Lato:wght@900&family=Roboto+Mono&display=swap');
 
 // font variables
 $font-color: rgb(26, 32, 39);
@@ -10,7 +10,8 @@ Helvetica,
 sans-serif;
 $font-mono: 'Roboto Mono',
 monospace;
-$font-big: sans-serif; // TODO: better font
+$font-big: 'Lato',
+sans-serif;
 
 // general variables
 $border: 1px solid rgba(0, 0, 0, 0.12);
@@ -24,6 +25,13 @@ body {
     margin: 0;
     overflow-x: hidden;
     font-family: $font;
+}
+
+// primary headings
+h1 {
+    color: rgb(18, 34, 50);
+    margin-bottom: 0;
+    font-family: $font-big;
 }
 
 // navigation bar
@@ -135,8 +143,9 @@ a.button {
 
     // hover background and subtle font change
     &:hover {
+        @extend .bg-surface;
+
         color: rgb(67, 79, 94);
-        background-color: rgba(0, 0, 0, 0.12);
     }
 }
 
@@ -170,11 +179,10 @@ a.button {
 
 // very large text, 1 per page
 #massive {
-    $margin-horz: 2.25rem;
+    $margin-horz: calc(2vh + 1rem);
     $size: calc(2rem + 2vw);
 
     font-size: $size;
-    font-family: $font-big;
     margin: 0 $margin-horz 0 $margin-horz;
     line-height: calc(#{$size} + 0.3rem);
     max-width: 500px;
@@ -270,6 +278,11 @@ a.button {
     $padding-vert: 2.25rem;
 
     padding: $padding-vert $padding-horz $padding-vert $padding-horz;
+}
+
+// represents the slight background used for two-toning
+.bg-surface {
+    background-color: #edf0f5;
 }
 
 // represents the absolute bottom-most background
