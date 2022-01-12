@@ -148,7 +148,10 @@ a.button {
 }
 
 // centred single card
-.centrecard {
+#centrecard {
+    @extend #splash;
+    @extend .bg-deep;
+
     display: flex;
     justify-content: center;
     align-items: center;
