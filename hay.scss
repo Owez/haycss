@@ -193,6 +193,71 @@ a.button {
     }
 }
 
+// dashboard container using splash element
+#dash {
+    @extend #splash;
+    @extend .bg-deep;
+
+    display: flex;
+    align-items: stretch;
+
+    // TODO: make wrap on media query for sidebar, use var
+
+    // cards bay for laying out cards in the dashboard
+    .cards {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+
+        // card-specific to stretch to width
+        .card {
+            flex: 1;
+        }
+    }
+}
+
+// sidebar which fits to height, commonly used with dash
+#sidebar {
+    $sidebar-width: 15rem;
+    $spacer: 1rem;
+
+    background-color: white;
+    height: calc(100% - #{$spacer});
+    min-width: $sidebar-width;
+    width: $sidebar-width;
+    border-right: $border;
+    display: flex;
+    flex-direction: column;
+    padding-top: $spacer;
+
+    // TODO: make 100vw on media query, use var
+
+    // section headings
+    p {
+        text-transform: uppercase;
+        margin: 0.5rem 0 0 1.125rem;
+        color: rgb(70, 70, 70);
+        font-size: 0.9rem;
+    }
+
+    // sidebar links
+    a {
+        @extend a.button;
+
+        $top-space: 0.5rem;
+        $side-space: 1rem;
+        
+        margin: 0 $side-space 0 $side-space;
+        border: none;
+        font-size: 1rem;
+        padding-top: $top-space;
+        padding-bottom: $top-space;
+    }
+
+    // TODO: buttons which appear the same as `a`
+}
+
+
 // represents the absolute bottom-most background
 .bg-deep {
     background: whitesmoke;
