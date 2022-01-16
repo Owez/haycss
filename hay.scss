@@ -216,6 +216,8 @@ a.button {
     box-shadow: $shadow;
     margin: 0.8rem;
     background-color: white;
+    min-width: 12.5rem;
+    min-height: 8.5rem;
 
     // marginless headings for styling
     h1,
@@ -241,6 +243,7 @@ a.button {
         width: 100%;
         display: flex;
         align-items: flex-start;
+        overflow-y: scroll;
 
         // card-specific to stretch to width
         .card {
@@ -286,12 +289,12 @@ a.button {
         padding-top: $top-space;
         padding-bottom: $top-space;
     }
-}
 
-// removes top padding for specialty header items
-#sidebar.topless {
-    height: 100%;
-    padding-top: 0;
+    // removes top padding for specialty header items
+    &.topless {
+        height: 100%;
+        padding-top: 0;
+    }
 }
 
 // content spacer primarily for text
