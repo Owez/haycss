@@ -18,7 +18,8 @@ $border: 1px solid rgba(0, 0, 0, 0.12);
 $nav-height: 45px;
 $full-minus-nav: calc(100vh - #{$nav-height} - 1px);
 $shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-$card-corner: 0.55rem;
+$small-radius: 0.55rem;
+$large-radius: 1rem;
 
 // global body rules
 body {
@@ -47,7 +48,7 @@ textarea {
     margin: 0 0 0.5em 0;
     box-sizing: border-box;
     border: $border;
-    border-radius: $card-corner;
+    border-radius: $small-radius;
 }
 
 // navigation bar
@@ -212,7 +213,7 @@ a.button {
 .card {
     padding: 1.5rem;
     border: $border;
-    border-radius: $card-corner;
+    border-radius: $large-radius;
     box-shadow: $shadow;
     margin: 0.8rem;
     background-color: white;
@@ -243,6 +244,7 @@ a.button {
         width: 100%;
         display: flex;
         align-items: flex-start;
+        flex-wrap: wrap;
         overflow-y: scroll;
 
         // card-specific to stretch to width
@@ -310,6 +312,23 @@ a.button {
     background-color: #edf0f5;
 }
 
+// codeblock
+.code {
+    $spacer: 0.25rem;
+    $spacer-big: calc(#{$spacer} * 1.75);
+
+    background-color: whitesmoke;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    padding: $spacer $spacer-big $spacer $spacer-big;
+    border-radius: $spacer;
+    margin: $spacer;
+
+    // smaller-fitting where space is a premium
+    &.mini {
+        font-size: 0.8rem;
+    }
+}
+
 // represents the absolute bottom-most background
 .bg-deep {
     background: whitesmoke;
@@ -332,4 +351,9 @@ a.button {
 // text centering
 .tc {
     text-align: center;
+}
+
+// no margin
+.nm {
+    margin: 0;
 }
