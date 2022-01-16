@@ -40,14 +40,14 @@ input,
 button,
 select,
 textarea {
-	font-family: inherit;
-	font-size: inherit;
-	-webkit-padding: 0.4em 0;
-	padding: 0.4em;
-	margin: 0 0 0.5em 0;
-	box-sizing: border-box;
-	border: $border;
-	border-radius: $card-corner;
+    font-family: inherit;
+    font-size: inherit;
+    -webkit-padding: 0.4em 0;
+    padding: 0.4em;
+    margin: 0 0 0.5em 0;
+    box-sizing: border-box;
+    border: $border;
+    border-radius: $card-corner;
 }
 
 // navigation bar
@@ -286,8 +286,12 @@ a.button {
         padding-top: $top-space;
         padding-bottom: $top-space;
     }
+}
 
-    // TODO: buttons which appear the same as `a`
+// removes top padding for specialty header items
+#sidebar.topless {
+    height: 100%;
+    padding-top: 0;
 }
 
 // content spacer primarily for text
@@ -311,16 +315,18 @@ a.button {
 
 // flexbox column
 .fcol {
-	display:flex;flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 // flexbox centering
 .fc {
-	display: flex;
-	justify-content: center;align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 // text centering
 .tc {
-	text-align: center;
+    text-align: center;
 }
