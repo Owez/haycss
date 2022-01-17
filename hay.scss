@@ -245,7 +245,7 @@ a.button {
         display: flex;
         align-items: flex-start;
         flex-wrap: wrap;
-        overflow-y: scroll;
+        overflow-y: auto;
 
         // card-specific to stretch to width
         .card {
