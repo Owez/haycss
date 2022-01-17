@@ -120,15 +120,17 @@ nav {
 
 // flash level error, 1st worst
 .error {
+    @extend .cu;
+
     background-color: rgb(220, 2, 2);
     color: white;
-    text-transform: uppercase;
 }
 
 // flash level warning, 2nd worst
 .warn {
+    @extend .cu;
+
     background-color: rgb(233, 218, 12);
-    text-transform: uppercase;
 }
 
 // flash level infomation, 3rd worst
@@ -229,6 +231,19 @@ a.button {
     }
 }
 
+// positions text with a link on the other side
+.sidelink {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+
+    // small italic link
+    a {
+        font-size: 0.85rem;
+        font-style: italic;
+    }
+}
+
 // dashboard container using splash element
 #dash {
     @extend #splash;
@@ -272,7 +287,8 @@ a.button {
 
     // section headings
     p {
-        text-transform: uppercase;
+        @extend .cu;
+
         margin: 0.5rem 0 0 1.125rem;
         color: rgb(70, 70, 70);
         font-size: 0.9rem;
@@ -356,4 +372,9 @@ a.button {
 // no margin
 .nm {
     margin: 0;
+}
+
+// uppercase text
+.cu {
+    text-transform: uppercase;
 }
