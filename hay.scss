@@ -59,15 +59,14 @@ nav {
 
     // flexboxed navigation with custom content
     .fluid {
+        @extend .fsplit;
+
         $side-space: 3rem;
 
         width: calc(100vw - #{$side-space} - #{$side-space});
         height: 100%;
         margin-left: $side-space;
         margin-right: $side-space;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
     }
 
     // orderly tightly-packed links 
@@ -83,60 +82,60 @@ nav {
     }
 }
 
-// navigation flashes
-.nav-flash {
-    @extend .hide;
 
-    display: flex;
-    justify-content: space-between;
-    border-bottom: $border;
+// notification container
+.notis {
+    display: block;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
 
-    $side-space: 1rem;
-
-    // text tweaks
-    p {
-        $padding-vert: 0.3rem;
-
+    // individual notification
+    .noti {
+        width: 16rem;
+        min-height: 3rem;
+        border-radius: $small-radius;
+        border: $border;
+        padding: 0.5rem;
         font-size: 0.8rem;
-        margin: $padding-vert 0 $padding-vert $side-space;
-        font-family: $font-mono;
+        margin-top: 0.5rem;
+
+        // for error notifications
+        &.error {
+            background-color: #F93943;
+            color: white;   
+        }
+
+        // for warning notifications
+        &.warn {
+            background-color: #FDE74C;
+        }
+
+        // for information notifications
+        &.info {
+            background-color: whitesmoke;
+        }
+
+        // titlebar allowing a button on the right
+        .titlebar {
+            @extend .fsplit;
+
+            margin-bottom: 0.3rem;
+        }
+
+        // text inside notification
+        p {
+            font-family: $font-mono;
+            margin: 0;
+
+            // title text to go on its own or with .titlebar
+            &.title {
+                font-family: $font;
+                font-size: 0.9rem;
+                font-weight: bold;
+            }
+        }
     }
-}
-
-// hides elements assigned
-.hide {
-    animation: hideAnimation 0s ease-in 4s;
-    animation-fill-mode: forwards;
-}
-
-// animation to insta-hide
-@keyframes hideAnimation {
-    to {
-        visibility: hidden;
-        width: 0;
-        height: 0;
-    }
-}
-
-// flash level error, 1st worst
-.error {
-    @extend .cu;
-
-    background-color: rgb(220, 2, 2);
-    color: white;
-}
-
-// flash level warning, 2nd worst
-.warn {
-    @extend .cu;
-
-    background-color: rgb(233, 218, 12);
-}
-
-// flash level infomation, 3rd worst
-.info {
-    background-color: lightgray;
-    border-top: $border;
 }
 
 // link without styling
@@ -377,4 +376,11 @@ a.button {
 // uppercase text
 .cu {
     text-transform: uppercase;
+}
+
+// space as far apart as possible
+.fsplit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
