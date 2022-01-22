@@ -1,6 +1,6 @@
 # haycss
 
-Material Design made simple, by [Authrio](https://gitlab.com/authrio).
+Material Design made simple, by [Authrio](https://authrio.com).
 
 ## Screenshots
 
