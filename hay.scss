@@ -125,12 +125,10 @@ nav {
 
         // text inside notification
         p {
-            font-family: $font-mono;
             margin: 0;
 
             // title text to go on its own or with .titlebar
             &.title {
-                font-family: $font;
                 font-size: 0.9rem;
                 font-weight: bold;
             }
