@@ -263,7 +263,7 @@ a.button {
     margin: 0.8rem;
     background-color: white;
     min-width: 12.5rem;
-    min-height: 8.5rem;
+    height: 8.5rem;
 
     // marginless headings for styling
     h1,
@@ -271,6 +271,12 @@ a.button {
     h3,
     h4 {
         margin: 0;
+    }
+
+    // fluid, large card for special content
+    &.big {
+        height: unset;
+        min-height: 8.5rem;
     }
 }
 
