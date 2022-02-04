@@ -49,6 +49,22 @@ h1 {
     margin-bottom: 0;
 }
 
+// link styling
+a {
+    color: rgb(0, 100, 200);
+    text-decoration: none;
+
+    // when a link is hovered over
+    &:hover {
+        text-decoration: underline;
+    }
+
+    // when a link has been visited
+    &:visited {
+        color: rgb(0, 80, 160);
+    }
+}
+
 // input styling
 input,
 button,
