@@ -1,19 +1,9 @@
 // fonts
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Lato:wght@900&family=Roboto+Mono&display=swap');
 
-// font variables
-$font-color: rgb(26, 32, 39);
-$font: "IBM Plex Sans",
--apple-system,
-BlinkMacSystemFont,
-Helvetica,
-sans-serif;
-$font-mono: 'Roboto Mono',
-monospace;
-$font-big: 'Lato',
-sans-serif;
 
-// general variables
+// variables
+$font-color: rgb(26, 32, 39);
 $border: 1px solid rgba(0, 0, 0, 0.12);
 $nav-height: 45px;
 $full-minus-nav: calc(100vh - #{$nav-height} - 1px);
@@ -21,19 +11,42 @@ $shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 $small-radius: 0.55rem;
 $large-radius: 1rem;
 
+// normal font used in typical circumstances
+.f-norm {
+    font-family: "IBM Plex Sans",
+        -apple-system,
+        BlinkMacSystemFont,
+        Helvetica,
+        sans-serif;
+}
+
+// mono fixed width fonts
+.f-mono {
+    font-family: 'Roboto Mono',
+        monospace;
+}
+
+// large text display items
+.f-big {
+    font-family: 'Lato',
+        sans-serif;
+}
+
 // global body rules
 body {
+    @extend .f-norm;
+
     color: $font-color;
     margin: 0;
     overflow-x: hidden;
-    font-family: $font;
 }
 
 // primary headings
 h1 {
+    @extend .f-big;
+
     color: rgb(18, 34, 50);
     margin-bottom: 0;
-    font-family: $font-big;
 }
 
 // input styling
@@ -92,6 +105,8 @@ nav {
 
     // individual notification
     .noti {
+        @extend .hide;
+
         width: 16rem;
         min-height: 3rem;
         border-radius: $small-radius;
@@ -103,7 +118,7 @@ nav {
         // for error notifications
         &.error {
             background-color: #F93943;
-            color: white;   
+            color: white;
         }
 
         // for warning notifications
@@ -133,6 +148,21 @@ nav {
                 font-weight: bold;
             }
         }
+    }
+}
+
+// hides elements assigned
+.hide {
+    animation: hideAnimation 0s ease-in 4s;
+    animation-fill-mode: forwards;
+}
+
+// animation to insta-hide
+@keyframes hideAnimation {
+    to {
+        visibility: hidden;
+        width: 0;
+        height: 0;
     }
 }
 

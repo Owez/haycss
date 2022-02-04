@@ -1,0 +1,12 @@
+/* Auxillary demo styling, not to be used */ 
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+
+a.logo {
+    font-family: "Alfa Slab One", serif;
+    font-size: 130%;
+    padding:0.725rem;
+}
+
+span.blue {
+    color: #0075eb;
+}
