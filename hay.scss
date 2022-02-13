@@ -379,6 +379,8 @@ a.button {
 
 // codeblock
 .code {
+    @extend .f-mono;
+
     $spacer: 0.25rem;
     $spacer-big: calc(#{$spacer} * 1.75);
 
@@ -391,6 +393,17 @@ a.button {
     // smaller-fitting where space is a premium
     &.mini {
         font-size: 0.65rem;
+    }
+}
+
+// body text
+p {
+    // inline code sizing
+    .code {
+        $padding: 0.1rem;
+
+        padding-top: $padding;
+        padding-bottom: $padding;
     }
 }
 
