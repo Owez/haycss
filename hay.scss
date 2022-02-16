@@ -65,7 +65,7 @@ a {
     }
 }
 
-// input styling
+// form control styling
 input,
 button,
 select,
@@ -78,6 +78,16 @@ textarea {
     box-sizing: border-box;
     border: $border;
     border-radius: $small-radius;
+}
+
+// input styling
+input {
+    background-color: rgb(248, 248, 248);
+}
+
+// general buttons
+button {
+    background-color: rgb(240, 240, 240);
 }
 
 // navigation bar
